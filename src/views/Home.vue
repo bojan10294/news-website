@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-container>
+      <div class="myApp">
+        <News class="news-class"/>
+        <Weather class="weather-class"/>
+      </div>
+    </b-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import News from '@/components/News.vue'
+import Weather from '@/components/Weather.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    News,
+    Weather
   }
 }
 </script>
+
+<style>
+
+.myApp{
+  display: flex;
+
+}
+.news-class{
+  flex: 7;
+}
+.weather-class{
+  flex: 3;
+}
+
+
+</style>
