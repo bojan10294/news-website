@@ -27,7 +27,7 @@
     </div>
     <div class="news-list-parent">
     <ul v-for="result of pageOfItems" :key="result.id" class="news-list">
-      <li><router-link :to="`@/views/Single/${ result.id }`"><img :src=" result.urlToImage " alt=""></router-link></li>
+      <li><img @click="storeAndRedirect(result)" :src=" result.urlToImage " alt=""></li>
       <li><strong>{{ result.title }}</strong></li>
       <li style="height:50px; overflow:hidden">{{ result.description }}</li><br>
       <li><a :href="result.url">Read more</a></li>
@@ -41,7 +41,7 @@
 
 <script>
 import axios from 'axios'
-//   import { mapState } from 'vuex'
+  import { mapActions } from 'vuex'
 
 export default {
     name: 'News',
@@ -71,6 +71,13 @@ export default {
         }
     },
     methods: {
+            ...mapActions(["storeNewsItem"]),
+            storeAndRedirect(item) {
+              this.storeNewsItem(item).then(() => {
+                this.$router.push(`/single/${item.id}`)
+
+              }).catch(e => alert('something went wrong!'))
+            },
             onChangePage (pageOfItems) {
             //   update page of items
             this.pageOfItems = pageOfItems
