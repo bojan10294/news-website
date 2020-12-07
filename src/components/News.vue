@@ -53,14 +53,13 @@
           <strong>{{ result.title.substring(0, 60) + "..." }}</strong>
         </li>
         <li>{{ result.description.substring(0, 100) + "..." }}</li>
-        <br />
-        <li><a :href="result.url">Read more</a></li>
       </ul>
     </div>
     <div class="jw-pagination">
       <jw-pagination
         :items="results"
         :pageSize="6"
+        :disableDefaultStyles="true"
         @changePage="onChangePage"
       ></jw-pagination>
     </div>
@@ -212,12 +211,19 @@ img {
   width: 160px !important;
 }
 .search-btn{
-  color:#93bd32;
-  border: #93bd32 solid 1px;
+  background-color: #93bd32 !important;
+  border: 1px solid #93bd32;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
   height: 38px;
   &:hover{
-  background-color: #93bd32;
-  border: #93bd32 solid 1px;
+  background-color: #749626 !important;
+  border: #749626 solid 1px;
   }
+.jw-pagination{
+  margin: 50px;
+}
 }
 </style>

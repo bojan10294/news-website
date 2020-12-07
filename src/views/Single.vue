@@ -1,11 +1,14 @@
 <template>
-  <div class="single">
-    <h1>Author {{ currentNewsItem.author }}</h1>
-    <h1>Content {{ currentNewsItem.content }}</h1>
-    <h1>Description {{ currentNewsItem.description }}</h1>
-    <h1>This is an single page</h1>
-    <h1>This is an single page</h1>
-  </div>
+    <b-container>
+      <div class="single">
+        <h1> {{ currentNewsItem.title }}</h1>
+        <img :src="currentNewsItem.urlToImage" alt="">
+        <h4>Author: {{ currentNewsItem.author }}</h4>
+        <p v-if="currentNewsItem.content">Content {{ currentNewsItem.content }}</p>
+        <router-link class="go-back" to="/"> Go Back</router-link>
+        <a :href="currentNewsItem.url" target="_blank">Read more ></a>
+      </div>
+    </b-container>
 </template>
 
 <script>
@@ -22,3 +25,26 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.single{
+  text-align: left;
+  padding: 40px 0;
+  h1{
+    max-width: 600px;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  p{
+    max-width: 700px;
+  }
+  img{
+    object-fit: cover;
+    max-width: 600px;
+    margin-bottom: 15px;
+  }
+  .go-back{
+    margin-right: 10px;
+  }
+}
+</style>

@@ -117,13 +117,12 @@ body {
   background-size: cover;
   background-position: center;
   transition: 0.4s;
-  height: 600px;
+  height: 100%;
 }
 #app.warm {
   background-image: url("../assets/warm-bg.jpg");
 }
 main {
-  min-height: 600px;
   padding: 25px;
   background-image: linear-gradient(
     to bottom,
@@ -134,14 +133,14 @@ main {
 }
 .search-box {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .search-box .search-bar {
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   color: #313131;
-  font-size: 20px;
+  font-size: 16px;
   appearance: none;
   border: none;
   outline: none;
@@ -158,14 +157,14 @@ main {
 }
 .location-box .location {
   color: #fff;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
   text-align: center;
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 .location-box .date {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   font-style: italic;
   text-align: center;
@@ -175,19 +174,19 @@ main {
 }
 .weather-box .temp {
   display: inline-block;
-  padding: 10px 25px;
+  padding: 7px 18px;
   color: #fff;
-  font-size: 102px;
+  font-size: 75px;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
-  margin: 30px 0px;
+  margin: 20px 0px;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 .weather-box .weather {
   color: #fff;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
