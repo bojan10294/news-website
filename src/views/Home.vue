@@ -2,8 +2,8 @@
   <div class="home">
     <b-container>
       <div class="myApp">
-        <News class="news-class"/>
-        <Weather class="weather-class"/>
+        <News class="news-class" />
+        <Weather class="weather-class" />
       </div>
     </b-container>
   </div>
@@ -23,17 +23,14 @@ export default {
 </script>
 
 <style>
-
-.myApp{
+.myApp {
   display: flex;
-
+  padding: 20px 0;
 }
-.news-class{
+.news-class {
   flex: 7;
 }
-.weather-class{
+.weather-class {
   flex: 3;
 }
-
-
 </style>
