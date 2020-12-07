@@ -5,7 +5,7 @@
         <img :src="currentNewsItem.urlToImage" alt="">
         <h4>Author: {{ currentNewsItem.author }}</h4>
         <p v-if="currentNewsItem.content">Content {{ currentNewsItem.content }}</p>
-        <router-link class="go-back" to="/"> Go Back</router-link>
+        <router-link class="go-back" to="/">&#60; Go Back</router-link>
         <a :href="currentNewsItem.url" target="_blank">Read more ></a>
       </div>
     </b-container>
@@ -44,7 +44,21 @@ export default {
     margin-bottom: 15px;
   }
   .go-back{
-    margin-right: 10px;
+    margin-right: 20px;
+    color: #93bd32;
+    text-decoration: none;
+    &:hover{
+      font-weight: 500;
+    }
+  }
+  a{
+    color: #93bd32;
+    text-decoration: none;
+    &:hover{
+    font-weight: 500;
+    text-decoration: none;
+    color: #93bd32;
+    }
   }
 }
 </style>

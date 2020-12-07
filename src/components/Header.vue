@@ -62,7 +62,7 @@ export default {
   background: #edeff2;
   display: flex;
   align-items: center;
-  padding: 45px 150px;
+  padding: 30px 150px;
 
   img {
     background-color: #93bd32 !important;
