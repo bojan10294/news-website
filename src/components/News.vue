@@ -53,6 +53,7 @@
           <strong>{{ result.title.substring(0, 60) + "..." }}</strong>
         </li>
         <li>{{ result.description.substring(0, 100) + "..." }}</li>
+        <li><a :href="result.url" target="_blank">Read more ></a></li>
       </ul>
     </div>
     <div class="jw-pagination">

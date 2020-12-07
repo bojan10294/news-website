@@ -3,7 +3,7 @@
     <b-container>
       <div class="myApp">
         <News class="news-class" />
-        <Weather class="weather-class" />
+        <Sidebar class="sidebar-class" />
       </div>
     </b-container>
   </div>
@@ -11,13 +11,13 @@
 
 <script>
 import News from '@/components/News.vue'
-import Weather from '@/components/Weather.vue'
+import Sidebar from '@/components/Sidebar.vue'
 
 export default {
   name: 'Home',
   components: {
     News,
-    Weather
+    Sidebar
   }
 }
 </script>
@@ -28,9 +28,9 @@ export default {
   padding: 20px 0;
 }
 .news-class {
-  flex: 7;
-}
-.weather-class {
   flex: 3;
+}
+.sidebar-class {
+  flex: 1;
 }
 </style>

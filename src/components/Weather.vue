@@ -1,36 +1,36 @@
 <template>
-  <div
-    id="app"
-    :class="
-      typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
-    "
-  >
-    <main>
-      <div class="search-box">
-        <input
-          type="text"
-          class="search-bar"
-          placeholder="Search..."
-          v-model="query"
-          @keypress="fetchWeather"
-        />
-      </div>
+    <div
+      id="app"
+      :class="
+        typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
+      "
+    >
+      <main>
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="Search..."
+            v-model="query"
+            @keypress="fetchWeather"
+          />
+        </div>
 
-      <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
-        <div class="location-box">
-          <div class="location">
-            {{ weather.name }}, {{ weather.sys.country }}
+        <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
+          <div class="location-box">
+            <div class="location">
+              {{ weather.name }}, {{ weather.sys.country }}
+            </div>
+            <div class="date">{{ dateBuilder() }}</div>
           </div>
-          <div class="date">{{ dateBuilder() }}</div>
-        </div>
 
-        <div class="weather-box">
-          <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
-          <div class="weather">{{ weather.weather[0].main }}</div>
+          <div class="weather-box">
+            <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
+            <div class="weather">{{ weather.weather[0].main }}</div>
+          </div>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
 </template>
 
 <script>
@@ -117,7 +117,9 @@ body {
   background-size: cover;
   background-position: center;
   transition: 0.4s;
-  height: 100%;
+  max-height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 #app.warm {
   background-image: url("../assets/warm-bg.jpg");
@@ -130,6 +132,7 @@ main {
     rgba(0, 0, 0, 0.75)
   );
   overflow: hidden;
+  max-height: 400px;
 }
 .search-box {
   width: 100%;
@@ -164,7 +167,7 @@ main {
 }
 .location-box .date {
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   font-style: italic;
   text-align: center;
@@ -176,7 +179,7 @@ main {
   display: inline-block;
   padding: 7px 18px;
   color: #fff;
-  font-size: 75px;
+  font-size: 55px;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
@@ -186,7 +189,7 @@ main {
 }
 .weather-box .weather {
   color: #fff;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
