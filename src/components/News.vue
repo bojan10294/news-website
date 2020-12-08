@@ -241,4 +241,21 @@ img {
   margin: 50px;
 }
 }
+@media (max-width: 767.98px) {
+  .news-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-btn{
+    margin: 10px;
+  }
+  .news-list{
+    width: 100%;
+  }
+}
 </style>

@@ -57,4 +57,17 @@ export default {
     }
   }
 }
+@media (max-width: 767.98px) {
+  .single{
+    h1{
+      font-size: 20px;
+    }
+    h4{
+      font-size: 18px;
+    }
+    img{
+      max-width: 90vw;
+    }
+  }
+}
 </style>

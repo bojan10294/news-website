@@ -2,7 +2,7 @@
   <footer>
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>
+        <b-col sm="12" md="6">
           <img src="../assets/logo_asioso.png" alt="" />
           <p>
             asioso Blog is a technology blog. We make digital business simple.
@@ -25,7 +25,7 @@
             </b-input-group>
             </div>
         </b-col>
-        <b-col offset-md="1">
+        <b-col offset-md="1" sm="12" md="6">
           <div>
             <b-table borderless small hover :items="items"></b-table>
           </div>

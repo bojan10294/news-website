@@ -82,4 +82,18 @@ export default {
     margin-top: 4px;
   }
 }
+@media (max-width: 980px) {
+  .nav-right{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    margin-top: 10px;
+  }
+ }
+ @media (max-width: 767px) {
+   .header{
+    padding: 20px 15px;
+    flex-direction: column;
+   }
+ }
 </style>

@@ -33,4 +33,9 @@ export default {
 .sidebar-class {
   flex: 1;
 }
+@media (max-width: 767.98px) {
+  .myApp{
+    flex-direction: column;
+  }
+}
 </style>

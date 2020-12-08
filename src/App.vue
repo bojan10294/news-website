@@ -70,4 +70,12 @@ export default {
     }
   }
 }
+@media (max-width: 767.98px) {
+  .jw-pagination ul{
+    flex-wrap: wrap;
+  a{
+    margin: 2px 0;
+  }
+  }
+}
 </style>
