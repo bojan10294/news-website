@@ -1,7 +1,5 @@
 <template>
     <b-container>
-      <router-link to="/">Back</router-link>
-
       <div class="single">
         <h1> {{ currentNewsItem.title }}</h1>
         <img :src="currentNewsItem.urlToImage" alt="">
