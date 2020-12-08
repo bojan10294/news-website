@@ -8,9 +8,9 @@
           <h6>Country:</h6>
           <b-form-select v-model="selectedCountry">
             <option
-              v-for="option in optionsCountry"
+              v-for="(option, i) in optionsCountry"
               v-bind:value="option.value"
-              :key="option.id"
+              :key="i"
             >
               {{ option.text }}
             </option>
@@ -21,9 +21,9 @@
           <h6>Category:</h6>
           <b-form-select v-model="selectedCategory">
             <option
-              v-for="option in optionsCategory"
+              v-for="(option, i) in optionsCategory"
               v-bind:value="option.value"
-              :key="option.id"
+              :key="i"
             >
               {{ option.text }}
             </option>
@@ -69,7 +69,7 @@
 
 <script>
 import axios from 'axios'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'News',
@@ -99,7 +99,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['storeNewsItem']),
+    ...mapActions(['storeNewsItem', 'storeCategoryAndCountry']),
     storeAndRedirect (item) {
       this.storeNewsItem(item)
         .then(() => {
@@ -113,6 +113,10 @@ export default {
     },
     //  OVDE POZIVA NA DUGME PO KATEGORIJI I ZEMLJI
     async categoryChange () {
+      this.storeCategoryAndCountry({
+        category: this.selectedCategory,
+        country: this.selectedCountry
+      })
       try {
         const res = await axios.get(
           `https://saurav.tech/NewsAPI/top-headlines/category/${this.selectedCategory}/${this.selectedCountry}.json`
@@ -130,17 +134,27 @@ export default {
       }
     }
   },
-  // computed: {
-  //     ...mapState([
-  //         'data.stateResults'
-  //     ])
-  // },
+    computed: {
+      ...mapState(['currentCategoryAndCountry'])
+    },
 
   //  OVDE POZIVA KAD SE UCITA STRANICA
   async created () {
+    let category = 'general'
+    let country = 'us'
+
+    if (this.currentCategoryAndCountry && this.currentCategoryAndCountry.category) {
+      this.selectedCategory = this.currentCategoryAndCountry.category
+      category = this.selectedCategory
+    }
+    if (this.currentCategoryAndCountry && this.currentCategoryAndCountry.country) {
+      this.selectedCountry = this.currentCategoryAndCountry.country
+      country = this.selectedCountry
+    }
+
     try {
       const res = await axios.get(
-        'https://saurav.tech/NewsAPI/top-headlines/category/general/us.json'
+        `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`
       )
 
       const resultsFirst = res.data.articles
